@@ -1,0 +1,20 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Checkout') {
+            steps {
+                // Checkout the code from your version control system
+                git 'https://github.com/shivamsingh2307/DevOps-assignment.git'
+            }
+        }
+
+        stage('Run Tests') {
+            steps {
+                // Run tests
+                sh 'python -m unittest discover'
+            }
+        }
+    }
+
+}
